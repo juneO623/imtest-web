@@ -13,23 +13,7 @@ const Question = () => {
 
   const [bingo, setBingo] = useRecoilState(bingoAtom);
   const correctAnswer = DATA[Number(id) - 1].answer;
-  // const a = DATA.filter(Number(id) === , Number(id))
   const [answer, setAnswer] = useState(-1);
-
-  // 지금 프로그램 에러 이유..
-  // 온클릭에서 네이게이트를 줘서
-  // answer값이 바뀌고 그 값과 정답을 비교해서
-  // 정답이면 1점 더해주는 연산을 하기 전에
-  // 다음 페이지로 넘겨버려서 정답이 꼬임
-
-  // useEffect에 네이게이트를 넣으면
-  // -1로 초기화 해줄 때도 네비게이트가 되어서
-  // 한 번에 2페이지씩 넘어감
-
-  // -1로 초기화 하지 않으면
-  // 그 전 문제의 답을 1로 체크했으면
-  // 다음문제에선 1로 체크하면 같은 값이여서
-  // 변했다고 인정안하고 다음 페이지로 넘어가지 않음
 
   useEffect(() => {
     if (correctAnswer === answer) {
